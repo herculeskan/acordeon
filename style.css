@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+:root {
+    --color-primario:#091353;
+    --color-secundario:#9D84B7;
+    --color-terciario:#D5D5D5;
+    --color-cuarto:#B2F9FC;
+}
+/*background y el tipo de letra */
+body {
+    background-color:var(--color-primario);
+    font-family: 'rubik',sans-serif;
+}
+
+/*alinear items y texto al frente */
+
+h1 {
+    text-align: center;
+}
+/*ajustar el acordeón */
+.accordion{
+    width: 800px;
+    margin:90px auto;
+    color:var(--color-primario);
+    background-color: var(--color-terciario);
+    padding: 45px 45px;
+
+}
+.accordion .container {
+    position: relative;
+    margin: 10px 10px;
+}
+/*los labels */
+
+.accordion .label {
+    position: relative;
+    padding:10px 0;
+    font-size: 30px;
+    color: var(--color-secundario);
+    cursor: pointer;
+}
+
+/*posición del signo más */
+
+.accordion .label::before {
+    content: '+';
+    color: var(--color-primario);
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    font-size: 30px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+/*ocultar contenido */
+
+.accordion .content {
+    position: relative;
+    background-color: var(--color-cuarto);
+    height: 0;
+    font-size: 20px;
+    text-align: justify;
+    width: 780px;
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+/*añadir línea horizonal */
+.accordion hr {
+    width: 100;
+    margin-left:0;
+    border:1px solid var(--color-cuarto);
+}
+
+/*acabado */
+.accordion .container.active .content {
+    height: 150px;
+}
+/*cambios del signo más al negativo */
+
+.accordion .container.active .label::before {
+    content: '-';
+    font-size: 30px;
+}
